@@ -1,0 +1,4 @@
+---
+
+mk_xinetd_daemon_managed:
+  - 'xinetd'

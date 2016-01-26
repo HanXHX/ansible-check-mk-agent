@@ -1,0 +1,18 @@
+---
+
+- name: ASSERT | Check variables
+  assert:
+    that: "mk_xinetd_daemon in mk_xinetd_daemon_managed"
+
+- name: APT | Install related packages
+  apt: pkg={{ item }} update_cache=yes cache_valid_time=3600 state=present
+  with_items:
+    - "{{ mk_xinetd_daemon }}"
+    - check-mk-agent
+
+- name: TEMPLATE | Deploy xinetd configuration
+  template: >
+    src=etc/xinetd.d/check_mk.j2
+    dest=/etc/xinetd.d/check_mk
+  when: mk_xinetd_daemon == 'xinetd'
+  notify: reload xinetd
