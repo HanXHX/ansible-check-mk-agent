@@ -10,6 +10,9 @@
     - "{{ mk_xinetd_daemon }}"
     - check-mk-agent
 
+- name: FILE | Unsure check config directory is created
+  file: path={{ mk_conf_dir }} state=directory
+
 - name: TEMPLATE | Deploy xinetd configuration
   template: >
     src=etc/xinetd.d/check_mk.j2
