@@ -17,7 +17,7 @@ Role Variables
 
 - `mk_port`: TCP port to listen
 - `mk_only_from`: IP list who can call service. Default: empty list = all.
-- `mk_xinetd_daemon`: default is xinetd, other systems will be managed later.
+- `mk_inetd_daemon`: default is xinetd, other systems will be managed later.
 - `mk_disable`: disable inetd service
 
 Dependencies

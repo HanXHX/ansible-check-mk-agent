@@ -19,7 +19,7 @@
   post_tasks:
     - name: SERVICE | Ensure xinetd service is started
       service: >
-        name={{ mk_xinetd_daemon }}
+        name={{ mk_inetd_daemon }}
         state=started
     - name: WAIT_FOR | Check check-mk-agent service is running (low timeout)
       wait_for: >

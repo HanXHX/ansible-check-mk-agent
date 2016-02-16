@@ -2,5 +2,5 @@
 
 mk_port: 6556
 mk_only_from: null
-mk_xinetd_daemon: 'xinetd'
+mk_inetd_daemon: 'xinetd'
 mk_disable: false
