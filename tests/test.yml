@@ -17,7 +17,7 @@
       - '127.0.0.1'
       - '10.0.0.2'
   post_tasks:
-    - name: SERVICE | Ensure xinetd service
+    - name: SERVICE | Ensure xinetd service is started
       service: >
         name={{ mk_xinetd_daemon }}
         state=started
