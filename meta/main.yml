@@ -12,12 +12,14 @@ galaxy_info:
     - trusty
     - vivid
     - wily
-    - xenial
   - name: Debian
     versions:
     - jessie
-    - stretch
-  categories:
+  galaxy_tags:
   - monitoring
+  - nagios
+  - check_mk
+  - check-mk
+  - inetd
 dependencies: []
 
