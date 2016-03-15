@@ -1,7 +1,7 @@
 Check-MK-Agent Ansible role
 ===========================
 
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.check--mk--agent-blue.svg)](https://galaxy.ansible.com/list#/roles/4399) [![Build Status](https://travis-ci.org/HanXHX/ansible-check-mk-agent.svg?branch=master)](https://travis-ci.org/HanXHX/ansible-check-mk-agent) 
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.check--mk--agent-blue.svg)](https://galaxy.ansible.com/HanXHX/check-mk-agent) [![Build Status](https://travis-ci.org/HanXHX/ansible-check-mk-agent.svg?branch=master)](https://travis-ci.org/HanXHX/ansible-check-mk-agent) 
 
 Install and configure check-mk-agent for Debian based systems.
 
