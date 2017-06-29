@@ -8,7 +8,25 @@
   apt: pkg={{ item }} update_cache=yes cache_valid_time=3600 state=present
   with_items:
     - "{{ mk_inetd_daemon }}"
-    - check-mk-agent
+
+- name: APT | Install agent
+  apt: pkg=check-mk-agent
+  when: ansible_distribution_release != 'stretch'
+
+- block:
+
+  - name: GET_URL | Download agent from upstream git (DIRTY)
+    get_url:
+      url: 'http://git.mathias-kettner.de/git/?p=check_mk.git;a=blob_plain;f=agents/check_mk_agent.linux;h=b4e78f2eab7e5327543a5cefb633f6a4345971c5;hb=refs/heads/1.2.8'
+      dest: /usr/local/bin/check_mk_agent
+      owner: root
+      mode: 0755
+
+  - name: FILE | Unsure check config directory is created
+    file: path={{ item }} state=directory
+    with_items: ['/usr/lib/check_mk_agent/plugins', '/usr/lib/check_mk_agent/local']
+
+  when: ansible_distribution_release == 'stretch'
 
 - name: FILE | Unsure check config directory is created
   file: path={{ mk_conf_dir }} state=directory

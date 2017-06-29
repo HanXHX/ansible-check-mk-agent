@@ -12,6 +12,12 @@ Requirements
 - Active support for Debian system. It should work on Ubuntu.
 - On Debian Jessie, [check-mk-agent](https://packages.debian.org/jessie-backports/check-mk-agent) is only available on [backports repository](http://backports.debian.org/). You must install it before launching this role.
 
+About Debian Stretch
+--------------------
+
+Debian Stretch doesn't provide any package (see https://packages.qa.debian.org/c/check-mk.html).
+This role download from git repository (1.2.8) and install it in `/usr/local/bin/check_mk`.
+
 Role Variables
 --------------
 
